@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Hirdu's Fitness</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #00c9a7;
+            --secondary-color: #845ec2;
+            --dark-color: #1e1e2c;
+            --light-color: #f8f9fa;
+            --accent-color: #ff6b6b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(rgba(30,30,44,0.9), rgba(30,30,44,0.9)),
+                        url('img/anastase-maragos-9dzWZQWZMdE-unsplash.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            color: var(--light-color);
+            min-height: 100vh;
+        }
+
+        header.head {
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(30,30,44,0.9);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-container img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--primary-color);
+        }
+
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-transform: uppercase;
+        }
+
+        .logo-text span {
+            color: var(--light-color);
+            font-style: italic;
+        }
+
+        .navbar {
+            display: flex;
+            list-style: none;
+        }
+
+        .navbar li {
+            margin: 0 10px;
+        }
+
+        .navbar li a {
+            color: var(--light-color);
+            text-decoration: none;
+            padding: 10px 15px;
+            font-weight: 600;
+            border-radius: 4px;
+            transition: 0.3s;
+        }
+
+        .navbar li a:hover,
+        .navbar li a.active {
+            color: var(--primary-color);
+            background-color: rgba(0, 201, 167, 0.1);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 180px auto 60px;
+            background: rgba(30,30,44,0.85);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            backdrop-filter: blur(8px);
+            animation: fadeIn 0.8s ease;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        h1::after {
+            content: '';
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(to right, var(--primary-color), var(--accent-color));
+            position: absolute;
+            left: 50%;
+            bottom: -15px;
+            transform: translateX(-50%);
+        }
+
+        form {
+            display: grid;
+            gap: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--light-color);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            padding: 12px 18px;
+            border: 1px solid rgba(0, 201, 167, 0.3);
+            background: transparent;
+            border-radius: 10px;
+            color: var(--light-color);
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            outline: none;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--primary-color);
+            background-color: rgba(0,201,167,0.05);
+            box-shadow: 0 0 10px rgba(0,201,167,0.2);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .btnn {
+            padding: 15px 40px;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            color: var(--light-color);
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s ease;
+            text-align: center;
+            max-width: 250px;
+            margin: 0 auto;
+        }
+
+        .btnn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 201, 167, 0.4);
+            background: linear-gradient(45deg, var(--secondary-color), var(--primary-color));
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #aaa;
+            font-size: 0.9rem;
+            background: rgba(30,30,44,0.95);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 200px 20px 60px;
+                padding: 30px 20px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="head">
+        <div class="logo-container">
+            <img src="img/fitness-logo-template-gym-club-logotype-sportsman-silhouette-character-logo-design-template-design-element-for-logo-poster-card-banner-emblem-t-shirt-illustration-vector.jpg" alt="Hirdu's Fitness Logo">
+            <div class="logo-text">Hirdu's <span>Fitness</span></div>
+        </div>
+
+        <ul class="navbar">
+            <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
+            <li><a href="https://www.calculator.net/body-fat-calculator.html"><i class="fas fa-calculator"></i> Fitness Calculator</a></li>
+            <li><a href="#" class="active"><i class="fas fa-phone-alt"></i> Contact Us</a></li>
+        </ul>
+    </header>
+
+    <div class="container">
+        <h1>Contact Us</h1>
+        <form>
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" placeholder="Enter your full name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" placeholder="example@domain.com" required>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Your Message</label>
+                <textarea id="message" placeholder="Tell us how we can help you..." required></textarea>
+            </div>
+
+            <button type="submit" class="btnn">Send Message</button>
+        </form>
+    </div>
+
+    <footer>
+        &copy; 2025 Hirdu's Fitness. All rights reserved.
+    </footer>
+</body>
+</html>

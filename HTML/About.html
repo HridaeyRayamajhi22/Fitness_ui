@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Hirdu's Fitness</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #00c9a7;
+            --secondary-color: #845ec2;
+            --dark-color: #1e1e2c;
+            --light-color: #f8f9fa;
+            --accent-color: #ff6b6b;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--light-color);
+            background: linear-gradient(rgba(30, 30, 44, 0.9), rgba(30, 30, 44, 0.9)), 
+                        url('img/anastase-maragos-9dzWZQWZMdE-unsplash.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+        
+        /* Header - Consistent with main page */
+        .head {
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(30, 30, 44, 0.9);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo-container img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--primary-color);
+        }
+        
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .logo-text span {
+            color: var(--light-color);
+            font-style: italic;
+        }
+        
+        .navbar {
+            display: flex;
+            list-style: none;
+        }
+        
+        .navbar li {
+            margin: 0 10px;
+            position: relative;
+        }
+        
+        .navbar li a {
+            color: var(--light-color);
+            text-decoration: none;
+            padding: 10px 15px;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            border-radius: 4px;
+        }
+        
+        .navbar li a:hover, 
+        .navbar li a.active {
+            color: var(--primary-color);
+            background-color: rgba(0, 201, 167, 0.1);
+        }
+        
+        /* Main Content */
+        .main-container {
+            max-width: 1200px;
+            margin: 180px auto 100px;
+            padding: 40px;
+            background-color: rgba(30, 30, 44, 0.8);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .main-container::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(0, 201, 167, 0.1) 0%, transparent 70%);
+            z-index: -1;
+        }
+        
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            margin-bottom: 30px;
+            color: var(--primary-color);
+            text-align: center;
+            position: relative;
+        }
+        
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(to right, var(--primary-color), var(--accent-color));
+        }
+        
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin: 40px 0 20px;
+        }
+        
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: var(--light-color);
+        }
+        
+        .highlight {
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+        
+        /* Founder Section */
+        .founder-section {
+            background-color: rgba(132, 94, 194, 0.1);
+            padding: 30px;
+            border-radius: 10px;
+            margin: 40px 0;
+            border-left: 4px solid var(--secondary-color);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .founder-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(circle, rgba(255, 107, 107, 0.1) 0%, transparent 70%);
+        }
+        
+        /* Qualifications */
+        .qualifications {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 30px 0;
+        }
+        
+        .qualification {
+            background-color: rgba(0, 201, 167, 0.1);
+            padding: 12px 20px;
+            border-radius: 50px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            border: 1px solid rgba(0, 201, 167, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .qualification:hover {
+            background-color: rgba(0, 201, 167, 0.2);
+            transform: translateY(-3px);
+        }
+        
+        .qualification i {
+            color: var(--accent-color);
+        }
+        
+        /* Button - Consistent with main page */
+        .btnn {
+            padding: 15px 40px;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            color: var(--light-color);
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 30px auto 0;
+            display: block;
+            box-shadow: 0 4px 15px rgba(0, 201, 167, 0.3);
+            text-decoration: none;
+            text-align: center;
+            max-width: 250px;
+        }
+        
+        .btnn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 201, 167, 0.4);
+            background: linear-gradient(45deg, var(--secondary-color), var(--primary-color));
+        }
+        
+        .btnn i {
+            margin-left: 8px;
+            transition: transform 0.3s ease;
+        }
+        
+        .btnn:hover i {
+            transform: translateX(5px);
+        }
+        
+        /* Floating elements - Consistent with main page */
+        .floating {
+            position: absolute;
+            opacity: 0.1;
+            z-index: -1;
+        }
+        
+        .floating.dumbbell {
+            top: 10%;
+            left: 5%;
+            font-size: 100px;
+            color: var(--primary-color);
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .floating.weight {
+            bottom: 10%;
+            right: 5%;
+            font-size: 80px;
+            color: var(--secondary-color);
+            animation: float 8s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+            100% { transform: translateY(0) rotate(0deg); }
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .main-container {
+                margin: 180px 20px 80px;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .head {
+                flex-direction: column;
+                padding: 15px;
+            }
+            
+            .logo-container {
+                margin-bottom: 15px;
+            }
+            
+            .navbar {
+                margin: 15px 0;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .main-container {
+                margin-top: 220px;
+                padding: 30px 20px;
+            }
+            
+            .qualifications {
+                justify-content: center;
+            }
+        }
+        
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .main-container {
+            animation: fadeIn 0.8s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <header class="head">
+        <div class="logo-container">
+            <img src="img/fitness-logo-template-gym-club-logotype-sportsman-silhouette-character-logo-design-template-design-element-for-logo-poster-card-banner-emblem-t-shirt-illustration-vector.jpg" alt="Hirdu's Fitness Logo">
+            <div class="logo-text">Hirdu's <span>Fitness</span></div>
+        </div>
+        
+        <div class="mid">
+            <ul class="navbar">
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#" class="active"><i class="fas fa-info-circle"></i> About</a></li>
+                <li><a href="https://www.calculator.net/body-fat-calculator.html"><i class="fas fa-calculator"></i> Fitness Calculator</a></li>
+                <li><a href="num.html"><i class="fas fa-phone-alt"></i> Contact Us</a></li>
+            </ul>
+        </div>
+    </header>
+    
+    <div class="main-container">
+        <i class="floating dumbbell fas fa-dumbbell"></i>
+        <i class="floating weight fas fa-weight"></i>
+        
+        <h1>Our Fitness Journey</h1>
+        
+        <p>Welcome to <span class="highlight">Hirdu's Fitness</span>, where we believe transformation begins with a single step. We're honored you're here to learn more about our story and philosophy.</p>
+        
+        <div class="founder-section">
+            <h2>From Struggle to Strength</h2>
+            <p>The story of Hirdu's Fitness begins with our founder, <span class="highlight">Hridaey Raya</span>. Growing up with an unhealthy lifestyle and facing constant bullying about his physique, Hridaey experienced firsthand the emotional and physical toll of poor fitness.</p>
+            <p>Rather than letting these challenges defeat him, he channeled them into motivation. What began as a personal journey to improve his health evolved into a passion for helping others transform their lives through fitness.</p>
+            <p>Today, Hridaey combines his diverse expertise across multiple disciplines to bring a unique, holistic approach to health and wellness.</p>
+        </div>
+        
+        <h2>Our Founder's Expertise</h2>
+        
+        <div class="qualifications">
+            <div class="qualification"><i class="fas fa-dumbbell"></i> Certified Personal Trainer</div>
+            <div class="qualification"><i class="fas fa-heartbeat"></i> Nutrition Specialist</div>
+            <div class="qualification"><i class="fas fa-code"></i> Software Developer</div>
+            <div class="qualification"><i class="fas fa-music"></i> Professional Musician</div>
+            <div class="qualification"><i class="fas fa-brain"></i> Mental Health Advocate</div>
+        </div>
+        
+        <p>At Hirdu's Fitness, we don't just train bodies—we transform lives. Our approach combines physical training with mental wellness, because true health encompasses both mind and body.</p>
+        
+        <p>Whether you're taking your first fitness steps or looking to break through plateaus, we're here to guide you every step of the way.</p>
+        
+        <a href="index.html" class="btnn">Join Our Community <i class="fas fa-arrow-right"></i></a>
+    </div>
+    
+    <script>
+        // Simple animation for qualifications on hover
+        document.querySelectorAll('.qualification').forEach(item => {
+            item.addEventListener('mouseover', function() {
+                this.style.transform = 'translateY(-3px)';
+                this.style.boxShadow = '0 5px 15px rgba(0, 201, 167, 0.2)';
+            });
+            
+            item.addEventListener('mouseout', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = 'none';
+            });
+        });
+        
+        // Header scroll effect - consistent with main page
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.head');
+            if(window.scrollY > 50) {
+                header.style.padding = '15px 5%';
+                header.style.background = 'rgba(30, 30, 44, 0.98)';
+            } else {
+                header.style.padding = '20px 5%';
+                header.style.background = 'rgba(30, 30, 44, 0.9)';
+            }
+        });
+    </script>
+</body>
+</html>
